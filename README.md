@@ -244,10 +244,10 @@ We use GitHub Issues as the official bug tracker for the Material Kit. Here are 
 
 ### Social Media
 
-Twitter: <https://twitter.com/CreativeTim?ref=creativetim>
+Twitter: <https://twitter.com/coinratecap>
 
-Facebook: <https://www.facebook.com/CreativeTim?ref=creativetim>
+Facebook: <https://www.facebook.com/coinratecap>
 
-Dribbble: <https://dribbble.com/creativetim?ref=creativetim>
+Dribbble: <https://dribbble.com/coinratecap>
 
-Instagram: <https://www.instagram.com/CreativeTimOfficial?ref=creativetim>
+Instagram: <https://www.instagram.com/coinratecap>
