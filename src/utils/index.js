@@ -9,3 +9,7 @@ export const getUserCredentials = () => {
 
   return JSON.parse(credentials);
 };
+
+export const clearCredentials = () => {
+  localStorage.clear();
+};

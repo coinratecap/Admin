@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
@@ -34,7 +17,7 @@ import {
   Container,
   Media,
 } from "reactstrap";
-import { getUserCredentials } from "utils";
+import { getUserCredentials, clearCredentials } from "utils";
 
 const AdminNavbar = (props) => {
   const userCredentials = getUserCredentials();
@@ -72,7 +55,9 @@ const AdminNavbar = (props) => {
                     />
                   </span>
                   <Media className='ml-2 d-none d-lg-block'>
-                    <span className='mb-0 text-sm font-weight-bold'>{user.first_name} {user.last_name}</span>
+                    <span className='mb-0 text-sm font-weight-bold'>
+                      {user.first_name} {user.last_name}
+                    </span>
                   </Media>
                 </Media>
               </DropdownToggle>
@@ -97,7 +82,7 @@ const AdminNavbar = (props) => {
                   <span>Support</span>
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href='#pablo' onClick={(e) => e.preventDefault()}>
+                <DropdownItem href='#pablo' onClick={clearCredentials}>
                   <i className='ni ni-user-run' />
                   <span>Logout</span>
                 </DropdownItem>
