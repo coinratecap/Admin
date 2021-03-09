@@ -18,7 +18,7 @@ import {
 import { useFormik } from "formik";
 import { useAlert } from 'react-alert';
 import axiosClient from "services/axiosClient";
-import { saveUserCredentials } from "utils";
+import { saveUserCredentials, saveToken } from "utils";
 import { useHistory } from "react-router-dom";
 
 const Login = () => {
@@ -29,17 +29,19 @@ const Login = () => {
       email: "",
       password: "",
     },
-    onSubmit: (values, {setSubmitting}) => {
+    onSubmit: (values, { setSubmitting }) => {
       axiosClient
-        .post("/admin/login", {...values})
+        .post("/v1/admin/login", { ...values })
         .then((response) => {
-          saveUserCredentials(response.data);
+          saveUserCredentials(response.data.data);
+          saveToken(response.data.token)
           history.push('/admin')
         })
         .catch((error) => {
-          setSubmitting(false);
-          const errMessage = error.response.data.msg || error.message;
-          alert.error(errMessage);
+          console.log(error)
+          // setSubmitting(false);
+          // const errMessage = error.response.data.msg || error.message;
+          // alert.error(errMessage);
         });
     },
   });

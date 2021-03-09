@@ -2,16 +2,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
-import { getUserCredentials } from "utils";
+import { getToken } from "utils";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-	const user = getUserCredentials();
+	const token = getToken();
+	console.log(getToken())
 
 	return (
 		<Route
 			{...rest}
 			render={(props) =>
-				user && user.token  ? (
+				token ? (
 					<Component {...props} />
 				) : (
 					<Redirect
