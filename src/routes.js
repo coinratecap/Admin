@@ -1,26 +1,28 @@
 import Index from "views/Index.js";
 import Blog from "views/Blog"
-import Profile from "views/examples/Profile.js";
-import Maps from "views/examples/Maps.js";
-import Register from "views/examples/Register.js";
-// import Login from "views/Login.js";
-import Tables from "views/examples/Tables.js";
-import Icons from "views/examples/Icons.js";
-
+import CreatePost from "views/Create-post"
 var routes = [
   {
 
     path: "/index",
     name: "Dashboard",
-    icon: "ni ni-tv-2 text-primary",
+    icon: "fas fa-bars text-primary",
     component: Index,
     layout: "/admin",
   },
   {
-    path: "/admin/blog",
+    path: "/blog",
     name: "Blog",
-    icon: "ni ni-tv-2 text-primary",
+    icon: "fas fa-blog text-primary",
     component: Blog,
+    layout: "/admin",
+  },
+
+  {
+    path: "/create-post",
+    name: "Create Post",
+    icon: "fas fa-edit text-primary",
+    component: CreatePost,
     layout: "/admin",
   },
   // {

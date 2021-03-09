@@ -38,6 +38,8 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^26.0.0",
+    "@ckeditor/ckeditor5-react": "^3.0.2",
     "@fortawesome/fontawesome-free": "5.15.2",
     "axios": "^0.21.1",
     "bootstrap": "4.6.0",

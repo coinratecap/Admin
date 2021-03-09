@@ -4,17 +4,12 @@ import { NavLink as NavLinkRRD, Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
 import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
+
   Collapse,
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
   DropdownToggle,
-  FormGroup,
   Form,
   Input,
   InputGroupAddon,
@@ -26,8 +21,8 @@ import {
   NavItem,
   NavLink,
   Nav,
-  Progress,
-  Table,
+
+  Dropdown,
   Container,
   Row,
   Col,
@@ -35,7 +30,12 @@ import {
 
 var ps;
 
+
 const Sidebar = (props) => {
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggle = () => setDropdownOpen(prevState => !prevState);
   const [collapseOpen, setCollapseOpen] = useState();
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
@@ -52,19 +52,35 @@ const Sidebar = (props) => {
   // creates the links that appear in the left menu / Sidebar
   const createLinks = (routes) => {
     return routes.map((prop, key) => {
-      return (
-        <NavItem key={key}>
-          <NavLink
-            to={prop.layout + prop.path}
-            tag={NavLinkRRD}
-            onClick={closeCollapse}
-            activeClassName="active"
-          >
-            <i className={prop.icon} />
-            {prop.name}
-          </NavLink>
-        </NavItem>
-      );
+      // if (prop.name === 'Blog' || prop.name === "create-post") {
+      //   return <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+      //     <DropdownToggle nav caret>
+      //       <i className={prop.icon} /> Blog
+      //         </DropdownToggle>
+      //     <DropdownMenu right>
+      //       <DropdownItem>
+      //         Create Post
+      //           </DropdownItem>
+      //       <DropdownItem href="/admin/blog">
+      //         Blog List
+      //           </DropdownItem>
+
+      //     </DropdownMenu>
+      //   </Dropdown>
+      // } else {
+      return <NavItem key={key}>
+        <NavLink
+          to={prop.layout + prop.path}
+          tag={NavLinkRRD}
+          onClick={closeCollapse}
+          activeClassName="active"
+        >
+          <i className={prop.icon} />
+          {prop.name}
+        </NavLink>
+
+      </NavItem>
+      // }
     });
   };
 

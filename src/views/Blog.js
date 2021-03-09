@@ -45,6 +45,8 @@ const Blog = () => {
                                     <tr>
                                         <th scope="col">Title</th>
                                         <th scope="col">Views</th>
+                                        <th scope="col">Likes</th>
+                                        <th scope="col">Comments</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Published Date</th>
@@ -65,6 +67,8 @@ const Blog = () => {
                                             </Media>
                                         </th>
                                         <td>323</td>
+                                        <td>3</td>
+                                        <td>56</td>
                                         <td>
                                             <Badge color="" className="badge-dot mr-4">
                                                 <i className="bg-warning" />
