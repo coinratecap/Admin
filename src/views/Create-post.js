@@ -14,11 +14,25 @@ import {
   Col,
   Container,
 } from "reactstrap";
+import { useFormik } from "formik";
 import "./styles/post.css";
 
 import Header from "components/Headers/Header.js";
 
 const CreatePost = () => {
+  const form = useFormik({
+    initialValues: {
+      title: "",
+      category: "",
+      status: "",
+      shortDescription: "",
+      description: "",
+    },
+    onSubmit: (formData) => {
+      console.log("==========FORMDATA======>", formData);
+    },
+  });
+
   return (
     <>
       <Header />
@@ -30,24 +44,29 @@ const CreatePost = () => {
                 <div className='text-center text-muted mb-4'>
                   <small>Create Blog Post</small>
                 </div>
-                <Form role='form'>
+                <Form role='form' onSubmit={form.handleSubmit}>
                   <FormGroup>
                     <InputGroup className='input-group-alternative'>
                       <Input
                         placeholder='Post Title'
                         type='text'
-                        autoComplete='new-password'
+                        id='title'
+                        value={form.values.title}
+                        onChange={form.handleChange}
                       />
                     </InputGroup>
                   </FormGroup>
                   <FormGroup>
-                    <div class='row'>
-                      <div class='col-md-6'>
+                    <div className='row'>
+                      <div className='col-md-6'>
                         <InputGroup className='input-group-alternative mb-3'>
-                          <Input type='select' bsSize='md'>
-                            <option selected disabled>
-                              Category
-                            </option>
+                          <Input
+                            type='select'
+                            bsSize='md'
+                            id='category'
+                            value={form.values.category}
+                            onChange={form.handleChange}>
+                            <option value=''>Category</option>
                             <option>Cryptocurrency</option>
                             <option>Social</option>
                             <option>Economy</option>
@@ -56,12 +75,15 @@ const CreatePost = () => {
                         </InputGroup>
                       </div>
 
-                      <div class='col-md-6'>
+                      <div className='col-md-6'>
                         <InputGroup className='input-group-alternative mb-3'>
-                          <Input type='select' bsSize='md'>
-                            <option selected disabled>
-                              Status
-                            </option>
+                          <Input
+                            type='select'
+                            bsSize='md'
+                            id='status'
+                            value={form.values.status}
+                            onChange={form.handleChange}>
+                            <option disabled>Status</option>
                             <option>Draft</option>
                             <option>Publish</option>
                           </Input>
@@ -75,8 +97,9 @@ const CreatePost = () => {
                       <Input
                         type='textarea'
                         placeholder='Short Post Content'
-                        name='text'
-                        id='exampleText'
+                        id='shortDescription'
+                        value={form.values.shortDescription}
+                        onChange={form.handleChange}
                       />
                     </InputGroup>
                   </FormGroup>
@@ -84,16 +107,20 @@ const CreatePost = () => {
                   <FormGroup>
                     <CKEditor
                       editor={ClassicEditor}
-                      data=''
+                      data='<p>Hello from CKEditor 5!</p>'
                       onReady={(editor) => {
                         // You can store the "editor" and use when it is needed.
                         console.log("Editor is ready to use!", editor);
+                      }}
+                      onChange={(event, editor) => {
+                        const data = editor.getData();
+                        console.log({ event, editor, data });
                       }}
                     />
                   </FormGroup>
 
                   <div className='text-center'>
-                    <Button className='mt-4' color='primary' type='button'>
+                    <Button className='mt-4' color='primary' type='submit'>
                       Create Post
                     </Button>
                   </div>
