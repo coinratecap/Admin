@@ -38,9 +38,9 @@ const Login = () => {
           history.push('/admin')
         })
         .catch((error) => {
-          console.log(error)
           setSubmitting(false);
-          const errMessage = error.response.data.msg || error.message;
+
+          const errMessage = error.response ? error.response?.data?.msg : error.message;
           alert.error(errMessage);
         });
     },
