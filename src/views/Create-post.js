@@ -18,6 +18,7 @@ import { useFormik } from "formik";
 import "./styles/post.css";
 
 import Header from "components/Headers/Header.js";
+import axiosClient from "services/axiosClient";
 
 const CreatePost = () => {
   const form = useFormik({
@@ -30,6 +31,14 @@ const CreatePost = () => {
     },
     onSubmit: (formData) => {
       console.log("==========FORMDATA======>", formData);
+      axiosClient
+        .post("/v1/blog/add", { ...formData })
+        .then((res) => {
+          console.log("==========RESPONSE======>", res);
+        })
+        .catch((error) => {
+          console.log("==========ERROR======>", error.response.data);
+        });
     },
   });
 
@@ -114,7 +123,7 @@ const CreatePost = () => {
                       }}
                       onChange={(event, editor) => {
                         const data = editor.getData();
-                        console.log({ event, editor, data });
+                        form.setFieldValue("description", data);
                       }}
                     />
                   </FormGroup>
