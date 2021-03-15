@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 
 // reactstrap components
@@ -37,10 +20,10 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          Traffic
+                          Top Crypto
                         </CardTitle>
                         <span className="h2 font-weight-bold mb-0">
-                          350,897
+                          Bitcoin
                         </span>
                       </div>
                       <Col className="col-auto">
@@ -67,13 +50,14 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          New users
+                          All users
                         </CardTitle>
                         <span className="h2 font-weight-bold mb-0">2,356</span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-warning text-white rounded-circle shadow">
-                          <i className="fas fa-chart-pie" />
+                          <i className="fas fa-users" />
+
                         </div>
                       </Col>
                     </Row>
@@ -95,13 +79,13 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          Sales
+                          Total Exchanges
                         </CardTitle>
                         <span className="h2 font-weight-bold mb-0">924</span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                          <i className="fas fa-users" />
+                          <i className="fas fa-chart-pie" />
                         </div>
                       </Col>
                     </Row>
@@ -123,9 +107,9 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          Performance
+                          Total Views
                         </CardTitle>
-                        <span className="h2 font-weight-bold mb-0">49,65%</span>
+                        <span className="h2 font-weight-bold mb-0">49,650</span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-info text-white rounded-circle shadow">

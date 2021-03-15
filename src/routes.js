@@ -1,6 +1,10 @@
 import Index from "views/Index.js";
 import Blog from "views/Blog"
 import CreatePost from "views/Create-post"
+import Users from "views/Users"
+import Exchanges from "views/Exchanges"
+import Coins from "views/Coin"
+
 var routes = [
   {
 
@@ -23,6 +27,29 @@ var routes = [
     name: "Create Post",
     icon: "fas fa-edit text-primary",
     component: CreatePost,
+    layout: "/admin",
+  },
+  {
+    path: "/users",
+    name: "Users",
+    icon: "fas fa-users text-primary",
+    component: Users,
+    layout: "/admin",
+  },
+
+  {
+    path: "/exchanges",
+    name: "Exchanges",
+    icon: "fas fa-users text-primary",
+    component: Exchanges,
+    layout: "/admin",
+  },
+
+  {
+    path: "/coins",
+    name: "Coins",
+    icon: "fas fa-coins text-primary",
+    component: Coins,
     layout: "/admin",
   },
   // {
