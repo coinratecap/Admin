@@ -3,6 +3,7 @@ import Blog from "views/Blog"
 import CreatePost from "views/Create-post"
 import Users from "views/Users"
 import Exchanges from "views/Exchanges"
+import Coins from "views/Coin"
 
 var routes = [
   {
@@ -41,6 +42,14 @@ var routes = [
     name: "Exchanges",
     icon: "fas fa-users text-primary",
     component: Exchanges,
+    layout: "/admin",
+  },
+
+  {
+    path: "/coins",
+    name: "Coins",
+    icon: "fas fa-coins text-primary",
+    component: Coins,
     layout: "/admin",
   },
   // {
